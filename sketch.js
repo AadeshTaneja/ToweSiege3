@@ -10,6 +10,7 @@ var score = 0;
 
 function preload(){
   polygon_img = loadImage("polygon.png")
+  bkimg();
    
 
 }
@@ -88,7 +89,7 @@ function setup() {
 
   slingShot = new SlingShot(this.polygon,{x:150,y:225})
 
-  bkimg();
+ 
  
   
 
@@ -161,17 +162,17 @@ block50.score();
 block60.score();
 block70.score();
 block80.score();
- 
+imageMode(CENTER);
+image(polygon_img,polygon.position.x,polygon.position.y,40,40);
+strokeWeight(1)
+stroke("orange")
+textSize(24)
+fill("red")
+text("Drag the Hexagonal Stone and Release it, to launch it towards the blocks",20,200);
+text("Press Space to get a Second chance to play!!",20,50);
+text("Score:"+score,650,40)
   drawSprites();
-  imageMode(CENTER);
-  image(polygon_img,polygon.position.x,polygon.position.y,40,40);
-  strokeWeight(1)
-  stroke("orange")
-  textSize(24)
-  fill("red")
-  text("Drag the Hexagonal Stone and Release it, to launch it towards the blocks",20,200);
-  text("Press Space to get a Second chance to play!!",20,50);
-  text("Score:"+score,650,40)
+  
 
   
 }
